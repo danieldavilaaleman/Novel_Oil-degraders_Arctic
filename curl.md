@@ -23,5 +23,7 @@ Note, after you've setup such $HOME/usr in your ~/.profile once you can easily i
 I had the problem to installing mia R package. For solving I load the module lib/gsl/2.3 or even better change the library path as:
 
 ```
+
 export LD_LIBRARY_PATH=/path/to/directory/containing/libgsl.so.19:$LD_LIBRARY_PATH
+
 ```
