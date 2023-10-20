@@ -19,3 +19,5 @@ export PKG_CONFIG_PATH
 ```
 
 Note, after you've setup such $HOME/usr in your ~/.profile once you can easily install most other packages to that prefix too.
+
+I had the problem to installing mia R package. For solving I load the module lib/gsl/2.3
