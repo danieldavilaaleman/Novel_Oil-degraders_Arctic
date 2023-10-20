@@ -7,8 +7,8 @@ Download curl sources, untar and cd into the extracted directory. Then
 make
 make install
 ```
-
 and add this to you ~/.profile:
+
 ```
 PATH="$HOME/usr/bin:$PATH"
 export PATH
