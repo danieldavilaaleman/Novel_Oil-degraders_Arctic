@@ -29,3 +29,12 @@ export LD_LIBRARY_PATH=/path/to/directory/containing/libgsl.so.19:$LD_LIBRARY_PA
 ```
 
 Then to run ANCOMBC, first I load the module lib/gsl/2.3 and the type rstudio on the terminal
+
+On the cpu Linux terminal run to get a virtual node
+
+```
+
+srun --pty --mem=8gb --time=1:00:00 --cpus-per-task=1 --nodes=1 /bin/bash
+
+```
+
