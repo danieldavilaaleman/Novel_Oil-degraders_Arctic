@@ -12,7 +12,7 @@ I followed some steps from https://f1000research.com/articles/5-1492/v2
 
 ```
 # Create table, number of features for each phyla
-table(tax_table(ps)[, "Phylum"], exclude = NULL)
+table(tax_table(ps_raw_micro_CRD_ONR7a)[, "Phylum"], exclude = NULL)
 ```
 
 2. This shows phyla with the number of features observed. Features (ASVs) annotated with a Phylum of NA are probably artifacts in a dataset and should be removed.
@@ -37,7 +37,7 @@ prevdf = data.frame(Prevalence = prevdf,
 ```
 plyr::ddply(prevdf, "Phylum", function(df1){cbind(mean(df1$Prevalence),sum(df1$Prevalence))})
 ```
-5. Subseting
+5. Subseting - removing ASVs without reads
 ```
 prevdf1 = subset(prevdf, Phylum %in% get_taxa_unique(ps1, "Phylum"))
 ggplot(prevdf1, aes(TotalAbundance, Prevalence / nsamples(ps0),color=Phylum)) +
@@ -46,3 +46,14 @@ ggplot(prevdf1, aes(TotalAbundance, Prevalence / nsamples(ps0),color=Phylum)) +
   scale_x_log10() +  xlab("Total Abundance") + ylab("Prevalence [Frac. Samples]") +
   facet_wrap(~Phylum) + theme(legend.position="none")
 ```
+6. Defining prevalence threshold
+```
+   #  Define prevalence threshold as 50% of total samples
+prevalenceThreshold = 0.5 * nsamples(ps0_ONR7a)
+prevalenceThreshold
+
+# Execute prevalence filter, using `prune_taxa()` function
+keepTaxa = rownames(prevdf1)[(prevdf1$Prevalence >= prevalenceThreshold)]
+ps1_ONR7a = prune_taxa(keepTaxa, ps0_ONR7a)
+```
+
