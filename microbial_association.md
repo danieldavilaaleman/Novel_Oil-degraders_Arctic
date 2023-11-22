@@ -2,7 +2,7 @@
 ## Solving spieceasy problem of low number of samples
 To remove taxa with lower number of read (e.g. <12 - two reads on average with sample saze of 6 bottles)
 ```
-ps1_ONR7a <- prune_taxa(taxa_sums(ps0_ONR7a)>80, ps0_ONR7a)
+ps1_ONR7a <- prune_taxa(taxa_sums(ps0_ONR7a)>12, ps0_ONR7a)
 ```
 However, I checked that lower number of samples generates a high number of false positives
 https://github.com/zdk123/SpiecEasi/issues/30. Therefore, I need to filter also for high prevalence taxa
