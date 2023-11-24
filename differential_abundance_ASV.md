@@ -1,4 +1,5 @@
 # Differential abundance analysis 
+https://docs.rc.fas.harvard.edu/kb/r-packages-with-singularity/
 1. Create a singularity container of bioconductor
 ```
 singularity pull docker://bioconductor/bioconductor_docker
