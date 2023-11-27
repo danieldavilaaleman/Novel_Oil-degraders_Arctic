@@ -6,7 +6,7 @@ singularity pull docker://bioconductor/bioconductor_docker:3.18-R-4.3.1
 ```
 2. Start a shell inside the container
 ```
-singularity shell bioconductor_docker_latest.sif
+singularity shell bioconductor_docker_3.18-R-4.3.1.sif
 ```
 3. Set my library directory
 ```
