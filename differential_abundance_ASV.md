@@ -2,7 +2,7 @@
 https://docs.rc.fas.harvard.edu/kb/r-packages-with-singularity/
 1. Create a singularity container of bioconductor
 ```
-singularity pull docker://bioconductor/bioconductor_docker
+singularity pull docker://bioconductor/bioconductor_docker:3.18-R-4.3.1
 ```
 2. Start a shell inside the container
 ```
