@@ -42,6 +42,7 @@ BiocManager::install("microbiomeMarker")
 #SBATCH --mem=30gb
 
 ####### Set environment variables ###############
+export R_LIBS_USER=$HOME/apps/R_Singularity/4.1.3:$R_LIBS_USER
 
 ###### Run your script #########################
 singularity exec ~/Singularity_containers/bioconductor_docker_devel.sif R CMD BATCH \
