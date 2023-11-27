@@ -10,8 +10,8 @@ singularity shell bioconductor_docker_devel.sif
 ```
 3. Set my library directory
 ```
-mkdir -p $HOME/apps/R_Singularity/4.1.3
-export R_LIBS_USER=$HOME/apps/R_Singularity/4.1.3:$R_LIBS_USER
+mkdir -p $HOME/Singularity_containers/R_Singularity/4.1.3
+export R_LIBS_USER=$HOME/Singularity_containers/R_Singularity/4.1.3:$R_LIBS_USER
 ```
 4. Start R shell
 ```
@@ -42,7 +42,7 @@ BiocManager::install("microbiomeMarker")
 #SBATCH --mem=30gb
 
 ####### Set environment variables ###############
-export R_LIBS_USER=$HOME/apps/R_Singularity/4.1.3:$R_LIBS_USER
+export R_LIBS_USER=$HOME/Singularity_containers/R_Singularity/4.1.3:$R_LIBS_USER
 
 ###### Run your script #########################
 singularity exec ~/Singularity_containers/bioconductor_docker_devel.sif R CMD BATCH \
