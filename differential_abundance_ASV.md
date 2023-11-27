@@ -21,3 +21,11 @@ Apptainer> R
 ```
 install.packages('ggplot2', lib = '~/apps/R_Singularity/4.3.0')
 ```
+6. To install Phyloseq and microbiomeMarker
+```
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("phyloseq")
+BiocManager::install("microbiomeMarker")
+```
