@@ -44,7 +44,7 @@ BiocManager::install("microbiomeMarker")
 ####### Set environment variables ###############
 
 ###### Run your script #########################
-singularity exec bioconductor_docker_devel.sif R CMD BATCH \
+singularity exec ~/Singularity_containers/bioconductor_docker_devel.sif R CMD BATCH \
 figure3_asv.R test.out
 
 ```
